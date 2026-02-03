@@ -1,7 +1,7 @@
 /******************************************************************************
- * Họ và tên: [ĐIỀN TÊN TẠI ĐÂY]
- * MSSV:      [ĐIỀN MSSV TẠI ĐÂY]
- * Lớp:       [ĐIỀN LỚP TẠI ĐÂY]
+ * Họ và tên: [Nguyễn Hoàng Anh]
+ * MSSV:      [ps48562]
+ * Lớp:       [CS21302]
  *****************************************************************************/
 
 //  BÀI 3: XÂY DỰNG HÀM HOÁN VỊ 
@@ -12,11 +12,20 @@
 
 #include <stdio.h>
 
-//Tạo hàm 
+int hoanvi(int *a, int *b) {
+    int temp = *a; // Lưu giá trị của a vào biến tạm
+    *a = *b;       // Gán giá trị của b cho a
+    *b = temp;    // Gán giá trị tạm cho b
+}
 
 int main() {
+    int a, b;
+    printf("Nhap hai so a va b: ");
+    scanf("%d %d", &a, &b);
+    printf("Truoc khi hoan vi: a = %d, b = %d\n", a, b);
+    hoanvi(&a, &b);
+    printf("Sau khi hoan vi: a = %d, b = %d\n", a, b);
 
-    // //Gọi hàm trong hàm main 
     
     return 0;
 }
