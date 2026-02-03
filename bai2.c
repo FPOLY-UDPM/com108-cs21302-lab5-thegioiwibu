@@ -11,12 +11,27 @@
 //  chia hết cho 100 
  
 #include <stdio.h>
-
-//Tạo hàm 
+int kiemtranamnhuan(int nam) {
+    // Kiểm tra nếu năm chia hết cho 400
+    if (nam % 400 == 0) {
+        return 1; // Năm nhuận
+    }
+    // Kiểm tra nếu năm chia hết cho 4 nhưng không chia hết cho 100
+    if (nam % 4 == 0 && nam % 100 != 0) {
+        return 1; // Năm nhuận
+    }
+    return 0; // Không phải năm nhuận
+}
 
 int main() {
-
-    // //Gọi hàm trong hàm main 
+    int nam;
+    printf("Nhap nam: ");
+    scanf("%d", &nam);
+    if (kiemtranamnhuan(nam)) {
+        printf("%d la nam nhuan\n", nam);
+    } else {
+        printf("%d khong phai la nam nhuan\n", nam);
+    }
     
     return 0;
 }
